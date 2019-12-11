@@ -34,38 +34,44 @@
                     <h1 class="text-transform-uppercase">Let's Talk</h1>
                 </div>
                 <div class="col-sm-8">
-                    <form action="">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="Name">
+                    @if( ! session()->has('message'))
+                        <form action="{{ route('contact.store') }}" method="POST">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="name" value="{{ old('name') }}" type="text" class="form-control" id="InputName" aria-describedby="nameHelp" placeholder="Name">
+                                        <div>{{ $errors->first('name') }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="email" value="{{ old('email') }}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                                        <div>{{ $errors->first('email') }}</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <textarea name="message" value="{{ old('message') }}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <div>{{ $errors->first('message') }}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out haha</label>
+                                    </div>
+                                </div>
+                                @csrf
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out haha</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

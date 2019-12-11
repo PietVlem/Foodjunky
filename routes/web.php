@@ -15,3 +15,4 @@ Route::get('/recipes/{recipe}', 'RecipesController@show')->name('recipes.show');
 
 /* Contact */
 Route::get('/contact','ContactFormController@create')->name('contact.create');
+Route::post('/contact', 'ContactFormController@store')->name('contact.store');
