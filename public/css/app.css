@@ -1,0 +1,447 @@
+/* Vars */
+
+@font-face {
+  font-family: SignPainter_HouseScript;
+  src: url("/fonts/SignPainter_HouseScript.ttf");
+}
+
+/*============================================================================
+  MIXINS
+==============================================================================*/
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.vh.focusable:active,
+.vh.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* text */
+
+h1,
+h2,
+p,
+.categories-list li {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  font-family: "Raleway", "arial";
+  color: #333644;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 900;
+  color: #333644;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: calc(25px + 5 * (100vw - 768px) / 432);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+h2.center {
+  text-align: center;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333644;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: calc(15px + 5 * (100vw - 768px) / 432);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+a {
+  color: #333644;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.intermediate-title {
+  font-size: 25px;
+  display: block;
+  font-family: "SignPainter_HouseScript";
+  width: 100%;
+  text-align: center;
+  color: #03A696;
+}
+
+@media screen and (min-width: 768px) {
+  .intermediate-title {
+    font-size: calc(25px + 10 * (100vw - 768px) / 432);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .intermediate-title {
+    font-size: 35px;
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+
+.color-primary {
+  color: #03A696;
+}
+
+/* Background */
+
+.bg {
+  display: table;
+  width: 100%;
+}
+
+.bg--grey {
+  background-color: #EEEEEE;
+}
+
+.row--25 {
+  margin-bottom: 25px;
+}
+
+.row--40 {
+  margin-bottom: 40px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #03A696;
+}
+
+.footer p,
+.footer .categories-list li,
+.categories-list .footer li {
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.container--full {
+  min-height: calc(100vh - 38px);
+}
+
+.image {
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image--big {
+  height: 400px;
+}
+
+.image--related-recipes {
+  width: 100%;
+}
+
+.pagination-container {
+  display: table;
+  width: 100%;
+}
+
+.pagination {
+  float: right;
+}
+
+.box-shadow,
+.related-recipe-wrapper {
+  box-shadow: 0px 0px 43px -18px rgba(0, 0, 0, 0.35);
+}
+
+.back-arrow {
+  display: table;
+}
+
+.back-arrow svg,
+.back-arrow p,
+.back-arrow .categories-list li,
+.categories-list .back-arrow li {
+  float: left;
+}
+
+.back-arrow svg {
+  padding-right: 10px;
+}
+
+/* Components */
+
+.navbar {
+  padding: 1.5rem 1rem;
+}
+
+.navbar-brand--logo {
+  font-family: "Raleway", "arial";
+  color: #333644;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 35px;
+}
+
+.navbar-brand--logo span {
+  color: #03A696;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.nav-link {
+  font-family: "Raleway", "arial";
+  color: #333644;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #333644;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #03A696;
+}
+
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #03A696;
+}
+
+.button {
+  font-family: "Raleway", "arial";
+  font-weight: 900;
+  text-transform: capitalize;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #03A696;
+  display: inline-block;
+}
+
+/* Pages */
+
+.image--hero,
+.image--hero-small {
+  min-height: 60vh;
+  padding-bottom: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.image--hero:before,
+.image--hero-small:before {
+  content: " ";
+  background-color: #333644;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.image--hero-small {
+  min-height: 25vh;
+}
+
+.image--hero__text-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+
+.hero-text {
+  padding: 40px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero-text h1,
+.hero-text p,
+.hero-text .categories-list li,
+.categories-list .hero-text li {
+  color: #ffffff;
+}
+
+.recipe-block-link {
+  display: block;
+  height: 100%;
+  position: relative;
+  top: 0;
+  -webkit-transition: top 0.1s;
+  transition: top 0.1s;
+}
+
+.recipe-block-link:hover {
+  top: -3px;
+}
+
+.recipe-wrapper h3 {
+  margin-top: 20px;
+}
+
+.into-image-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.into-image-container__image {
+  max-width: 100px;
+  max-height: 80px;
+}
+
+.categories-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.categories-list li {
+  margin-bottom: 15px;
+}
+
+.categories-list li a:hover {
+  color: #03A696;
+}
+
+.categories-list li.active a {
+  color: #03A696;
+}
+
+.recipe-section {
+  margin-bottom: 40px;
+}
+
+.related-recipe-wrapper {
+  background-color: white;
+  width: 100%;
+  display: table;
+  margin-bottom: 30px;
+  position: relative;
+  top: 0;
+  -webkit-transition: top 0.1s;
+  transition: top 0.1s;
+}
+
+.related-recipe-wrapper:hover {
+  top: -3px;
+}
+
+.p-big {
+  font-weight: 100;
+  font-size: 20px;
+  margin-top: 20px;
+}
+

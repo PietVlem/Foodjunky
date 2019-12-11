@@ -1,0 +1,331 @@
+/* Vars */
+//colors
+$primary: #03A696;
+$white: #ffffff;
+$grey: #EEEEEE;
+$black: #333644;
+$black-light: #545970;
+
+$bg: #f3f3f3;
+
+// text
+@font-face {
+    font-family: SignPainter_HouseScript;
+    src: url('/fonts/SignPainter_HouseScript.ttf');
+}
+
+@import "assets/mixins.scss";
+
+/* text */
+h1,h2,p{
+    @include optimize-font;
+    font-family: 'Raleway','arial';
+    color: $black;
+}
+h1{
+    font-weight: 900;
+}
+h2{
+    @include fluid-type(font-size, 768px, 1200px, 25px, 30px);
+    font-weight: 900;
+    color: $black;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    &.center{
+        text-align: center;
+    }
+}
+h3{
+    @include fluid-type(font-size, 768px, 1200px, 15px, 20px);
+    font-weight: 700;
+    color: $black;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+p{
+
+}
+a{
+    color: $black;
+    &:hover{
+        text-decoration: none;
+    }
+}
+.intermediate-title{
+    @include fluid-type(font-size, 768px, 1200px, 25px, 35px);
+    display: block;
+    font-family: 'SignPainter_HouseScript';
+    width: 100%;
+    text-align: center;
+    color: $primary;
+}
+.text-align-center{
+    text-align: center;
+}
+.text-transform-uppercase{
+    text-transform: uppercase;
+}
+.color-primary{
+    color: $primary;
+}
+
+/* Background */
+.bg{
+    display: table;
+    width: 100%;
+}
+.bg--grey{
+    background-color: $grey;
+}
+
+// Grid
+.row--25{
+    margin-bottom: 25px;
+}
+
+.row--40{
+    margin-bottom: 40px;
+}
+
+// Overall
+body{
+    
+}
+
+.footer{
+    width: 100%;
+    background-color: $primary;
+    p{
+        color: $white;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+.container{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.container--full{
+    min-height: calc(100vh - 38px);   
+}
+
+.image{
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.image--big{
+    height: 400px;
+}
+
+.image--related-recipes{
+    width: 100%;
+}
+
+.pagination-container{
+    display: table;
+    width: 100%;
+}
+
+.pagination{
+    float: right;
+}
+
+.box-shadow{
+    -webkit-box-shadow: 0px 0px 43px -18px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 43px -18px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 43px -18px rgba(0,0,0,0.35);
+}
+
+.back-arrow{
+    display: table;
+    svg, p{
+        float: left;
+    }
+    svg{
+        padding-right: 10px;
+    }
+}
+
+/* Components */
+// Nav
+.navbar{
+    padding: 1.5rem 1rem;
+}
+
+.navbar-brand--logo{
+    font-family: 'Raleway','arial';
+    color: $black;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 35px;
+    span{
+        color: $primary;
+    }
+}
+
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+} 
+
+.nav-link{
+    font-family: 'Raleway','arial';
+    color: $black;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $black;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: $primary;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+    color: $primary;
+}
+
+// button
+.button{
+    font-family: 'Raleway','arial';
+    font-weight: 900;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: $white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: $primary;
+    display: inline-block;
+}
+
+/* Pages */
+// index
+.image--hero{
+    min-height: 60vh;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:before{
+        content: " ";
+        background-color: $black;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        bottom:0;
+        left:0;
+        right: 0;
+    }
+}
+
+.image--hero-small{
+    @extend .image--hero;
+    min-height: 25vh;
+}
+
+.image--hero__text-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.hero-text{
+    padding: 40px;
+    max-width: 800px;
+    text-align: center;
+    h1,p{
+        color: $white;
+    }
+}
+
+.recipe-block-link{
+    display: block;
+    height: 100%;
+    position: relative;
+    top:0;
+    transition: top 0.1s;
+    &:hover{
+        top: -3px;
+    }
+}
+
+.recipe-wrapper{
+    h3{
+        margin-top: 20px;
+    }
+
+}
+
+.into-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.into-image-container__image{
+    max-width: 100px;
+    max-height: 80px;
+}
+
+// overview
+.categories-list{
+    list-style-type: none;
+    padding-left: 20px;
+    li{
+        @extend p;
+        margin-bottom: 15px;
+        a{
+            &:hover{
+                color: $primary;
+            }
+        }
+        &.active{
+            a{ 
+                color: $primary;
+            }   
+        }
+    }
+}
+
+// Single
+.recipe-section{
+    margin-bottom: 40px;
+}
+
+.related-recipe-wrapper{
+    @extend .box-shadow;
+    background-color: white;
+    width: 100%;
+    display: table;
+    margin-bottom: 30px;
+    position: relative;
+    top:0;
+    transition: top 0.1s;
+    &:hover{
+        top: -3px;
+    }
+}
+
+// contact
+.p-big{
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: 20px;
+}
