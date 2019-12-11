@@ -445,3 +445,13 @@ a:hover {
   margin-top: 20px;
 }
 
+.alert {
+  width: 100%;
+}
+
+.alert p,
+.alert .categories-list li,
+.categories-list .alert li {
+  margin-bottom: 0px;
+}
+

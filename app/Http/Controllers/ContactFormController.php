@@ -21,6 +21,8 @@ class ContactFormController extends Controller
 
         Mail::to('test@test.com')->send(new ContactFormMail($data));
 
-        return redirect('contact');
+        // session()->flash('message', "Thanks for your message. I won't be in touch 'cuz this no real website brah'.")
+
+        return redirect('contact')->with('message', "Thanks for your message. I won't be in touch 'cuz this no real website brah'.");
     }
 }

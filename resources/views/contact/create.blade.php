@@ -29,6 +29,13 @@
     </div>
     <div class="bg bg--grey">
         <div class="container">
+            @if( session()->has('message'))
+                <div class="row row--25">
+                    <div class="alert alert-success" role="alert">
+                        <p><strong>Success!</strong> {{ session()->get('message') }} </p>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-sm-4">
                     <h1 class="text-transform-uppercase">Let's Talk</h1>
